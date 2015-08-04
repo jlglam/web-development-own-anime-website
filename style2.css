@@ -10,5 +10,13 @@ h2{
 
 .row{
 	width: 100%;
-	margin: 0;	
+	margin-left: 0;
+	padding: 10px;
+}
+
+hr{
+	width: 50%;
+	border: 1px groove;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
