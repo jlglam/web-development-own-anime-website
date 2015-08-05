@@ -25,9 +25,9 @@ var main = function() {
 		}, 200);
 			
 	});
-	
+
 	$(".menu").click(function(event){
- 		event.stopPropagation();
+		event.stopPropagation();
 	});
 
 	$(document).click(function(){
