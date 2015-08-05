@@ -25,6 +25,7 @@ var main = function() {
 		}, 200);
 			
 	});
+<<<<<<< HEAD
 
 	$(document).click(function(){
 		$(".menu").animate({
@@ -33,5 +34,25 @@ var main = function() {
 	});
 	
 };
+||||||| merged common ancestors
+	
+	
+	
+}
+=======
+
+	$(".menu").click(function(event){
+		event.stopPropagation();
+	})
+
+	$(document).click(function(){
+		$(".menu").animate({
+			left: "-285px"
+		}, 200);
+	})
+	
+}
+>>>>>>> origin/master
 
 $(document).ready(main);
+
