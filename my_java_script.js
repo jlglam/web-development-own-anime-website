@@ -25,10 +25,10 @@ var main = function() {
 		}, 200);
 			
 	});
-
-	$(document).click(function(event)){
-		event.stopPropagation();
-	}
+	
+	$(".menu").click(function(event){
+ 		event.stopPropagation();
+	});
 
 	$(document).click(function(){
 		$(".menu").animate({

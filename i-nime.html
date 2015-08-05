@@ -46,7 +46,7 @@
         <div class="item active">
           <img src="anime_pics/onePiece.jpg" alt="One Piece">
           <div class="carousel-caption item-info">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/_WrsBkP19bQ" frameborder="0" allowfullscreen></iframe>
+				<iframe id="player" class="embed-responsive-item" width="300" height="250" src="https://www.youtube.com/embed/_WrsBkP19bQ?enablejsapi=1" frameborder="0"></iframe>
           </div> 
         </div>
         
@@ -114,7 +114,30 @@
 
     <div><hr></div>
   </div>
-  
   <script src="my_java_script.js"></script>
+  <script>
+  	var player;
+	function onYouTubeIframeAPIReady()
+	{
+		player = new YT.Player( 'player', {
+		events: { 'onStateChange': onPlayerStateChange }
+		});
+	
+		function onPlayerStateChange(event) {
+			switch(event.data) {
+				case 0: /*video ended*/
+					$("#myCarousel").carousel('cycle');
+					break;
+				case 1:/*video playing*/
+					$("#myCarousel").carousel('pause');
+					break;
+				case 2:/*video paused*/
+					$("#myCarousel").carousel('cycle');
+					break;
+			}
+		}
+	}
+  </script>
+  <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>
