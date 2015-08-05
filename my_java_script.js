@@ -26,6 +26,10 @@ var main = function() {
 			
 	});
 
+	$(document).click(function(event)){
+		event.stopPropagation();
+	}
+
 	$(document).click(function(){
 		$(".menu").animate({
 			left: "-285px"
