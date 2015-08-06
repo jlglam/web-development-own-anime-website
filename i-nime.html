@@ -35,10 +35,10 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="0" class="dots active"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class="dots"></li>
+        <li data-target="#myCarousel" data-slide-to="2" class="dots"></li>
+        <li data-target="#myCarousel" data-slide-to="3" class="dots"></li>
       </ol>
   
           <!-- Wrapper for slides -->
@@ -46,28 +46,28 @@
         <div class="item active">
           <img src="anime_pics/onePiece.jpg" alt="One Piece">
           <div class="carousel-caption item-info">
-            <iframe id="player1" class="embed-responsive-item" width="300" height="250" src="https://www.youtube.com/embed/_WrsBkP19bQ?enablejsapi=1" frameborder="0"></iframe>
+            <iframe id="player1" class="embed-responsive-item" width="240" height="135" src="https://www.youtube.com/embed/_WrsBkP19bQ?enablejsapi=1" frameborder="0" allowfullscreen="1"></iframe>
           </div>
         </div>
         
         <div class="item">
           <img src="anime_pics/dragonBallS.jpg" alt="Dragon Ball Super">
           <div class="carousel-caption item-info">
-             <iframe id="player2" class="embed-responsive-item" width="300" height="250" src="https://www.youtube.com/embed/WiONylGn8Xw?enablejsapi=1" frameborder="0"></iframe>
+             <iframe id="player2" class="embed-responsive-item" width="240" height="135" src="https://www.youtube.com/embed/WiONylGn8Xw?enablejsapi=1" frameborder="0" allowfullscreen="1"></iframe>
            </div>
         </div>
       
         <div class="item">
           <img src="anime_pics/shokugekiNoSouma.jpg" alt="Shokugeki No Souma">
           <div class="carousel-caption item-info">
-             <iframe id="player3" class="embed-responsive-item" width="300" height="250" src="https://www.youtube.com/embed/wtxYvpc8xr0?enablejsapi=1" frameborder="0"></iframe>
+             <iframe id="player3" class="embed-responsive-item" width="240" height="135" src="https://www.youtube.com/embed/wtxYvpc8xr0?enablejsapi=1" frameborder="0" allowfullscreen="1"></iframe>
            </div>
         </div>
        
         <div class="item">
           <img src="anime_pics/fairyTail.png" alt="Fairy Tail">
           <div class="carousel-caption item-info">
-             <iframe id="player4" class="embed-responsive-item" width="300" height="250" src="https://www.youtube.com/embed/HQJ34jAQKrI?enablejsapi=1" frameborder="0"></iframe>
+             <iframe id="player4" class="embed-responsive-item" width="240" height="135" src="https://www.youtube.com/embed/HQJ34jAQKrI?enablejsapi=1" frameborder="0" allowfullscreen="1"></iframe>
            </div>
         </div>
       </div>
@@ -146,18 +146,42 @@
 
 
 		player1 = new YT.Player( 'player1' , {
+		playerVars: {
+				'autohide' : 1,
+				'showinfo' : 0,
+				'modestbranding' : 1,
+				'cc_load_policy' : 1,
+				'rel' : 0},
 		events: { 'onReady': onPlayerReady,
 				  'onStateChange': onPlayerStateChange }
 		});
 		player2 = new YT.Player( 'player2' , {
+		playerVars: {
+			'autohide' : 1,
+			'showinfo' : 0,
+			'modestbranding' : 1,
+			'cc_load_policy' : 1,
+			'rel' : 0},
 		events: { 'onReady': onPlayerReady,
 				  'onStateChange': onPlayerStateChange }
 		});
 		player3 = new YT.Player( 'player3' , {
+		playerVars: {
+				'autohide' : 1,
+				'showinfo' : 0,
+				'modestbranding' : 1,
+				'cc_load_policy' : 1,
+				'rel' : 0},
 		events: { 'onReady': onPlayerReady,
 				  'onStateChange': onPlayerStateChange }
 		});
 		player4 = new YT.Player( 'player4' , {
+		playerVars: {
+				'autohide' : 1,
+				'showinfo' : 0,
+				'modestbranding' : 1,
+				'cc_load_policy' : 1,
+				'rel' : 0},
 		events: { 'onReady': onPlayerReady,
 				  'onStateChange': onPlayerStateChange }
 		});
@@ -183,6 +207,16 @@
 	{
 		//active_slide_video_id = $(".carousel-inner").find(".active").find("iframe").attr("id");
 		$(".carousel-control").on("click", function(){
+			player1.seekTo(0, true);
+			player1.stopVideo();
+			player2.seekTo(0, true);
+			player2.stopVideo();
+			player3.seekTo(0, true);
+			player3.stopVideo();
+			player3.seekTo(0, true);
+			player4.stopVideo();
+		});
+		$(".dots").on("click", function(){
 			player1.seekTo(0, true);
 			player1.stopVideo();
 			player2.seekTo(0, true);
