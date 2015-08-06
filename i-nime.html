@@ -183,9 +183,13 @@
 	{
 		//active_slide_video_id = $(".carousel-inner").find(".active").find("iframe").attr("id");
 		$(".carousel-control").on("click", function(){
+			player1.seekTo(0, true);
 			player1.stopVideo();
+			player2.seekTo(0, true);
 			player2.stopVideo();
+			player3.seekTo(0, true);
 			player3.stopVideo();
+			player3.seekTo(0, true);
 			player4.stopVideo();
 		});
 	}
